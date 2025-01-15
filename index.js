@@ -427,8 +427,12 @@ function populateInstructions(list, leg) {
 			console.log(maneuver.pedestrianPoint, maneuver.pedestrianEdge, maneuver.autoPoint, maneuver.autoEdge);
 			
 			let coord = coords[maneuver.begin_shape_index];
-			popup.setLngLat([coord[1], coord[0]])
-				.setHTML(`<p>${maneuver.instruction}</p>`);
+			popup.setLngLat([coord[1], coord[0]]);
+			if (maneuver.rewritten_instruction) {
+				popup.setHTML(`<p><del>${maneuver.instruction}</del></p><p><ins>${maneuver.rewritten_instruction}</ins></p>`);
+			} else {
+				popup.setHTML(`<p>${maneuver.instruction}</p>`);
+			}
 			map.easeTo({
 				center: [coord[1], coord[0]],
 				zoom: 18
