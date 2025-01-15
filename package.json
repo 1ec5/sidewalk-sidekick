@@ -1,0 +1,36 @@
+{
+  "name": "sidewalk-sidekick",
+  "version": "1.0.0",
+  "description": "The hero we pedestrians need",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:copy && esbuild index.js --bundle --outdir=dist",
+    "build:copy": "mkdir -p dist && cp index.html dist",
+    "start": "npm run build:copy && open 'http://127.0.0.1:8000/' && esbuild index.js --bundle --outdir=dist --servedir=dist --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1ec5/sidewalk-sidekick.git"
+  },
+  "keywords": [
+    "openstreetmap",
+    "routing",
+    "pedestrian"
+  ],
+  "author": "Minh Nguyễn",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/1ec5/sidewalk-sidekick/issues"
+  },
+  "homepage": "https://github.com/1ec5/sidewalk-sidekick#readme",
+  "devDependencies": {
+    "esbuild": "^0.24.2",
+    "shx": "^0.3.4"
+  },
+  "dependencies": {
+    "@mapbox/polyline": "^1.2.1",
+    "@turf/turf": "^7.2.0",
+    "maplibre-gl": "^5.0.1"
+  }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sidewalk Sidekick</title>
+		<meta charset="utf-8">
+		<script src="./index.js" type="text/javascript" defer></script>
+		<link rel="stylesheet" href="./index.css">
+		<style rel="stylesheet" type="text/css">
+			html, body {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#sidebar {
+				position: absolute;
+				padding: 1em;
+				width: 50%;
+				height: 100%;
+				overflow: scroll;
+			}
+			
+			.coordinates {
+				text-align: right;
+			}
+			
+			li:hover {
+				background-color: silver;
+				cursor: pointer;
+			}
+			
+			.rewritten {
+				font-weight: bold;
+			}
+			
+			#map {
+				position: absolute;
+				left: 50%;
+				width: 50%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="sidebar">
+			<h1>Sidewalk Sidekick</h1>
+			
+			<p>Unnamed sidewalks got you turned around? Never fear, for <em>Sidewalk Sidekick is here!</em></p>
+			
+			<p>
+				<select id="examples">
+					<option value="">Example Routes</option>
+					<option value="diridon" data-origin-latitude="37.329909" data-origin-longitude="-121.902497" data-destination-latitude="37.341996" data-destination-longitude="-121.904973">Diridon Station to Rotary PlayGarden, San Jose, California</option>
+					<option value="town" data-origin-latitude="37.333261" data-origin-longitude="-121.914371" data-destination-latitude="37.342098" data-destination-longitude="-121.910243">Town Cinemas to Taco Mania, San Jose, California</option>
+					<option value="macquarrie" data-origin-latitude="37.333663" data-origin-longitude="-121.881799" data-destination-latitude="37.332305" data-destination-longitude="-121.889746">MacQuarrie Hall to César Chávez Park, San Jose, California</option>
+					<option value="schickel" data-origin-latitude="39.268266" data-origin-longitude="-84.261945" data-destination-latitude="39.268058" data-destination-longitude="-84.255776">William Schickel Gallery to Whistle Stop Clay Works, Loveland, Ohio</option>
+					<option value="sien-lok" data-origin-latitude="51.052636" data-origin-longitude="-114.064152" data-destination-latitude="51.048827" data-destination-longitude="-114.06347">Sien Lok Park to Harmony Park, Calgary, Alberta</option>
+				</select>
+			</p>
+			
+			<table>
+				<thead>
+					<tr>
+						<th>Waypoint</th>
+						<th>Latitude</th>
+						<th>Longitude</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Origin</td>
+						<td><input type="text" class="coordinates" id="origin-latitude"></td>
+						<td><input type="text" class="coordinates" id="origin-longitude"></td>
+					</tr>
+					<tr>
+						<td>Destination</td>
+						<td><input type="text" class="coordinates" id="destination-latitude"></td>
+						<td><input type="text" class="coordinates" id="destination-longitude"></td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<p><button type="submit" id="calculate">Amaze Me!</button> <button id="clear">Clear</button></p>
+			
+			<table>
+				<caption>Instructions</caption>
+				<thead>
+					<tr>
+						<th>Raw</th>
+						<th>Matched</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<ol id="raw"></ol>
+						</td>
+						<td>
+							<ol id="matched"></ol>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<div id="map"></div>
+	</body>
+</html>
