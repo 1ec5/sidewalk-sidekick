@@ -433,6 +433,7 @@ function populateInstructions(list, leg) {
 			} else {
 				popup.setHTML(`<p>${maneuver.instruction}</p>`);
 			}
+			popup.addTo(map);
 			map.easeTo({
 				center: [coord[1], coord[0]],
 				zoom: 18
