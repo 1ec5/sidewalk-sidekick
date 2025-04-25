@@ -154,10 +154,14 @@ async function receiveRoute(response) {
 	let leg = response.trip.legs[0];
 	populateInstructions(list, leg);
 	
-	let pedestrianResponse = await getMatch('pedestrian', response);
-	let autoResponse = await getMatch('auto', response);
-	plotMatch(response, pedestrianResponse, autoResponse);
-	receiveMatch(response, pedestrianResponse, autoResponse);
+	setTimeout(async () => {
+		let pedestrianResponse = await getMatch('pedestrian', response);
+		setTimeout(async () => {
+			let autoResponse = await getMatch('auto', response);
+			plotMatch(response, pedestrianResponse, autoResponse);
+			receiveMatch(response, pedestrianResponse, autoResponse);
+		}, 1000);
+	}, 1000);
 }
 
 function plotRoute(response) {
