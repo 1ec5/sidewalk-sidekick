@@ -22,3 +22,5 @@ The raw pedestrian route is plotted on the map in purple, marking each coordinat
 
 * Nguyen, Minh. “[Re: Don't recommend "description=... sidewalk"](https://github.com/OpenSidewalks/OpenSidewalks-Schema/issues/2#issuecomment-1074404560)”. _OpenSidewalks-Schema_. GitHub. 21 March 2022.
 * Nguyen, Minh. “[Re: Announcement / request for comments: naming sidewalks in Toronto](https://community.openstreetmap.org/t/announcement-request-for-comments-naming-sidewalks-in-toronto/124205/14).” _OpenStreetMap Community Forum_. 13 January 2025.
+* Nguyen, Minh. “[Route along sidewalk should name the street to follow](https://github.com/valhalla/valhalla/issues/5587)”. _Valhalla_. GitHub. 9 October 2025.
+* Nguyen, Minh. “[Inferring names for sidewalks using map matching](https://community.openstreetmap.org/t/inferring-names-for-sidewalks-using-map-matching/136675)”. _OpenStreetMap Community Forum_. 9 October 2025.
