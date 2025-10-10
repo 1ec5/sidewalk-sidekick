@@ -2,10 +2,13 @@ import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import polyline from "@mapbox/polyline";
 import * as turf from "@turf/turf";
+import { graybeard } from "@versatiles/style";
 
 let map = new maplibregl.Map({
 	container: "map",
-	style: "https://styles.trailsta.sh/openmaptiles-osm.json",
+	style: graybeard({
+		baseUrl: 'https://tiles.versatiles.org',
+	}),
 	center: [-121.900644, 37.331569],
 	zoom: 18,
 });
